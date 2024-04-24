@@ -1,4 +1,7 @@
+import argparse
 import warnings
+
+import cv2
 
 from nets import nn
 
@@ -6,12 +9,14 @@ warnings.filterwarnings("ignore")
 
 
 def main():
-    import cv2
+    parser = argparse.ArgumentParser()
+    parser.add_argument("image_path", type=str)
+    args = parser.parse_args()
 
     # Load model
     model = nn.ONNX(onnx_path='./weights/model.onnx')
 
-    image = cv2.imread('./data/2.jpg')
+    image = cv2.imread(args.image_path)
     gender = model(image)
     print(gender)
 
