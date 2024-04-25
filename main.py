@@ -15,10 +15,10 @@ def main():
 
     # Load model
     model = nn.ONNX(onnx_path='./weights/model.onnx')
-
     image = cv2.imread(args.image_path)
-    gender = model(image)
-    print(gender)
+
+    genders = model([image])
+    print(genders)
 
 
 if __name__ == "__main__":
