@@ -10,15 +10,23 @@ warnings.filterwarnings("ignore")
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("image_path", type=str)
+    parser.add_argument("image_path", nargs='+')
     args = parser.parse_args()
 
     # Load model
     model = nn.ONNX(onnx_path='./weights/model.onnx')
-    image = cv2.imread(args.image_path)
 
-    genders = model([image])
-    print(genders)
+    inputs = []
+    filenames = []
+    for filename in args.image_path:
+        filenames.append(filename)
+    for filename in filenames:
+        image = cv2.imread(filename)
+        inputs.append(image)
+
+    outputs = model(inputs)
+    for output in outputs:
+        print(output)
 
 
 if __name__ == "__main__":
