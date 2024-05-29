@@ -22,4 +22,4 @@ pip install onnxruntime
 ```
 #### Reference
 
-* https://github.com/MhLiao/DB
+* https://github.com/PaddlePaddle/PaddleDetection/blob/release/2.4/deploy/pphuman/docs/attribute_en.md
