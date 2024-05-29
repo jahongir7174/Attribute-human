@@ -18,7 +18,16 @@ pip install onnxruntime
 <img src="./demo/demo.jpg" width="960" alt="">
 
 ```
-['Male', 'Age: 18~60', 'Direction: Front', 'Glasses: True', 'Hat: False', 'HoldObjectsInFront: True', 'No bag', 'Upper: LongSleeve', 'Lower:  LongCoat Trousers', 'No boots']
+Gender: Male
+Age: 18~60
+Direction: Front
+Glasses: True
+Hat: False
+HoldObjectsInFront: True
+No bag
+Upper: LongSleeve
+Lower:  LongCoat Trousers
+No boots
 ```
 #### Reference
 
